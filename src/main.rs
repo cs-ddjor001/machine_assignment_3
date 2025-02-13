@@ -3,12 +3,12 @@ use plotters::prelude::*;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let a = 4.0 / 3.0;
     let b = a - 1_f64;
-    let c = b * b * b;
+    let c = b + b + b;
     let eps = (1_f64 - c).abs();
     let sqrt_eps = eps.sqrt();
 
-    println!("Approximate machine epsilon: {}", eps);
-    println!("Square root of epsilon: {}", sqrt_eps);
+    println!("Approximate machine epsilon: {:+e}", eps);
+    println!("Square root of epsilon: {:+e}", sqrt_eps);
 
     println!("|  h   |       x       | Approx. f'(x) |  Known f'(x)  |  Abs. Error   |");
     println!("|:----:|--------------:|--------------:|--------------:|--------------:|");
